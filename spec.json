@@ -1,0 +1,12 @@
+{
+    "name": "myapp",
+    "version": "1.0.0",
+    "description": "My  application",
+    "arch": "x86_64",
+    "license": "GPL-3.0",
+    "dependencies": ["libc", "python3"],
+    "provides": ["myapp"],
+    "conflicts": ["oldmyapp"],
+    "maintainer": "user@example.com",
+    "build_script": "#!/bin/bash\nmkdir -p $PKG_ROOT/usr/bin\ncp myapp $PKG_ROOT/usr/bin/\n"
+}

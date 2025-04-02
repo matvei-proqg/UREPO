@@ -1,0 +1,57 @@
+{
+  "external_repositories": {
+    "flathub": {
+      "name": "Flathub",
+      "url": "https://dl.flathub.org/repo/flathub.flatpakrepo",
+      "type": "flatpak",
+      "enabled": true,
+      "priority": 100,
+      "compatibility": {
+        "distros": ["arch", "fedora", "debian", "ubuntu"],
+        "arches": ["x86_64", "aarch64"]
+      }
+    },
+    "eepm": {
+      "name": "EEPM",
+      "url": "https://repo.eepm.ru",
+      "type": "rpm",
+      "enabled": true,
+      "priority": 90,
+      "compatibility": {
+        "distros": ["altlinux", "rosa", "redos"],
+        "arches": ["x86_64", "i586"]
+      }
+    },
+    "aur": {
+      "name": "Arch User Repository",
+      "url": "https://aur.archlinux.org",
+      "type": "aur",
+      "enabled": false,
+      "priority": 50,
+      "compatibility": {
+        "distros": ["arch"],
+        "arches": ["x86_64", "aarch64"]
+      },
+      "build_requirements": ["git", "base-devel"]
+    }
+  },
+  "compatibility_matrix": {
+    "packages": {
+      "nginx": {
+        "flathub": "org.nginx.Nginx",
+        "eepm": "nginx",
+        "aur": "nginx"
+      },
+      "gimp": {
+        "flathub": "org.gimp.GIMP",
+        "eepm": "gimp",
+        "aur": "gimp"
+      }
+    },
+    "distro_mapping": {
+      "ubuntu": "debian",
+      "linuxmint": "debian",
+      "centos": "fedora"
+    }
+  }
+}
